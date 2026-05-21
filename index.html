@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0a0a0c" />
+
+  <title>Muhammad Shahbaz — Sim2Real LiDAR Researcher</title>
+  <meta name="description" content="Muhammad Shahbaz, Ph.D. — Post-doctoral scholar at the University of Central Florida. I build high-fidelity digital twins that close the Sim2Real gap for LiDAR perception in intelligent transportation systems." />
+  <meta name="author" content="Muhammad Shahbaz" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Muhammad Shahbaz — Sim2Real LiDAR Researcher" />
+  <meta property="og:description" content="Ph.D. researcher building high-fidelity digital twins to close the Sim2Real gap for LiDAR perception." />
+  <meta property="og:url" content="https://m-shahbaz-kharal.github.io/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/9637550?v=4" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0c'/%3E%3Ccircle cx='9' cy='9' r='1.6' fill='%239eff5b'/%3E%3Ccircle cx='16' cy='9' r='1.2' fill='%23eee'/%3E%3Ccircle cx='23' cy='9' r='1.6' fill='%23eee'/%3E%3Ccircle cx='9' cy='16' r='1.2' fill='%23eee'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%239eff5b'/%3E%3Ccircle cx='23' cy='16' r='1.2' fill='%23eee'/%3E%3Ccircle cx='9' cy='23' r='1.6' fill='%23eee'/%3E%3Ccircle cx='16' cy='23' r='1.2' fill='%23eee'/%3E%3Ccircle cx='23' cy='23' r='1.6' fill='%239eff5b'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" aria-label="Primary">
+  <a class="nav-brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span class="dot-accent"></span><span></span>
+      <span></span><span></span><span></span>
+    </span>
+    <span class="brand-name">M. Shahbaz</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:M.Shahbaz.Kharal@outlook.com">Get in touch <span aria-hidden="true">→</span></a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <canvas id="pointcloud" aria-hidden="true"></canvas>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="pulse" aria-hidden="true"></span>
+      Post-doctoral Scholar · University of Central Florida
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line">Muhammad</span>
+      <span class="line"><em>Shahbaz</em>, <span class="postnominal">Ph.D.</span></span>
+    </h1>
+
+    <p class="hero-lede">
+      I build <strong>high-fidelity digital twins</strong> of real intersections so that 3D perception models —
+      trained entirely in simulation — work the moment they're deployed on a real LiDAR. Closing the
+      <span class="accent">Sim2Real gap</span> is my dissertation, my postdoc, and most of my GitHub.
+    </p>
+
+    <div class="hero-meta">
+      <div class="meta-row">
+        <span class="meta-label">Focus</span>
+        <span class="meta-chips">
+          <span class="chip">Sim2Real Learning</span>
+          <span class="chip">3D Computer Vision</span>
+          <span class="chip">Digital Twins</span>
+          <span class="chip">Roadside LiDAR</span>
+          <span class="chip">Sensor Fusion</span>
+        </span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Stack</span>
+        <span class="meta-chips">
+          <span class="chip mono">PyTorch</span>
+          <span class="chip mono">CARLA</span>
+          <span class="chip mono">Unreal&nbsp;/&nbsp;Unity</span>
+          <span class="chip mono">Open3D</span>
+          <span class="chip mono">ROS</span>
+          <span class="chip mono">C++&nbsp;/&nbsp;Python</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="#work">See the work <span aria-hidden="true">↓</span></a>
+      <a class="btn" href="https://github.com/m-shahbaz-kharal" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=S9DacPcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+  </div>
+
+  <a class="scroll-hint" href="#about" aria-label="Scroll to content">
+    <span></span>
+  </a>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">A little about me</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <p>
+        I'm a researcher who fell in love with computer science through game dev as a teenager, kept the obsession
+        through three degrees, and now spend my days at the intersection of <strong>simulation, perception, and the
+        real world</strong>.
+      </p>
+      <p>
+        My Ph.D. (UCF, 2025) — <em>From Failure to Fidelity: Enabling Scalable Sim2Real LiDAR Perception</em> — argued
+        that the gap between simulated and real LiDAR is mostly a data problem, not a model problem. The work has since
+        produced an open-source framework, three public datasets, a JOSS paper, and a pending patent.
+      </p>
+      <p>
+        Outside the lab I build things for fun: a VR narrative game for Quest 3, a voice-to-keyboard dictation tool I
+        actually use every day, a personal AI assistant with an Android frontend. Eight years of programming, four
+        languages I'm fluent in, and one weakness for over-engineering side projects.
+      </p>
+    </div>
+
+    <aside class="about-side">
+      <dl class="kv">
+        <dt>Based in</dt><dd>Orlando, Florida</dd>
+        <dt>Role</dt><dd>Post-doctoral Scholar, UCF CECE</dd>
+        <dt>Advisor</dt><dd>Dr. Shaurya Agarwal</dd>
+        <dt>Lab</dt><dd>Urbanity Lab</dd>
+        <dt>From</dt><dd>Pakistan</dd>
+        <dt>Speaks</dt><dd>English, Urdu, Punjabi</dd>
+      </dl>
+      <a class="ghost-link" href="#cv">Read the long version <span aria-hidden="true">→</span></a>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section class="research" id="research">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Research focus</h2>
+    <p class="section-sub">
+      One thesis, four threads. They all share a question: how do we get a perception model to behave the same
+      way on real sensor data that it does in a simulator?
+    </p>
+  </div>
+
+  <div class="focus-grid">
+    <article class="focus">
+      <div class="focus-num">F1</div>
+      <h3>High-Fidelity Digital Twins</h3>
+      <p>
+        Statistically aligned replicas of real intersections built in Unreal &amp; Matlab RoadRunner. Geometry,
+        materials, traffic flow, and sensor placement are all measured from the source — not guessed. The output is
+        synthetic LiDAR that <em>fools</em> downstream detectors.
+      </p>
+      <ul class="focus-keys">
+        <li><span>↳</span> Provisional patent: <em>Statistically Aligned LiDAR Digital Twin Pipeline</em></li>
+        <li><span>↳</span> Three public synthetic datasets on Harvard Dataverse</li>
+      </ul>
+    </article>
+
+    <article class="focus">
+      <div class="focus-num">F2</div>
+      <h3>Sim2Real LiDAR Perception</h3>
+      <p>
+        Training 3D object detectors entirely in simulation and benchmarking them on real roadside LiDAR. In
+        several configurations the sim-trained detector now <strong>beats</strong> models trained on real data —
+        the upside of perfect labels.
+      </p>
+      <ul class="focus-keys">
+        <li><span>↳</span> Two T-ITS-class manuscripts under review</li>
+        <li><span>↳</span> CenterPoint &amp; LiDAR-camera fusion baselines</li>
+      </ul>
+    </article>
+
+    <article class="focus">
+      <div class="focus-num">F3</div>
+      <h3>Self-Supervised Roadside Detection</h3>
+      <p>
+        <strong>DINOSTAR</strong> trains object detectors on raw point clouds with no human labels — using
+        statistically-modeled teachers built from clustering, background filtering, and bounding-box fitting. It
+        matches human-annotated baselines.
+      </p>
+      <ul class="focus-keys">
+        <li><span>↳</span> arXiv:2501.17076 · submitted to ACM SIGSPATIAL 2025</li>
+      </ul>
+    </article>
+
+    <article class="focus">
+      <div class="focus-num">F4</div>
+      <h3>Open Tooling for the Field</h3>
+      <p>
+        <strong>LiGuard</strong> is a GUI-powered Python framework that lets researchers compose point-cloud
+        pipelines without rewriting the framework. Published in JOSS, used by other labs, kept alive through three
+        major versions.
+      </p>
+      <ul class="focus-keys">
+        <li><span>↳</span> JOSS 2025 · MIT licensed · on PyPI</li>
+        <li><span>↳</span> <code>pip install LiGuard</code></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ================= FEATURED WORK ================= -->
+<section class="work" id="work">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Featured work</h2>
+    <p class="section-sub">
+      The projects I'd actually want to talk to you about. Research first, then tools, then the side projects
+      that betray my game-dev origins.
+    </p>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- LiGuard -->
+    <article class="card card-feature card-liguard">
+      <div class="card-art" aria-hidden="true">
+        <img src="https://github.com/m-shahbaz-kharal/LiGuard-2.x/raw/dev_2.x/docs/figs/liguard-logo.png" alt="" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Research framework</span>
+          <span class="tag dim">Python · Open3D · OpenCV</span>
+        </div>
+        <h3>LiGuard</h3>
+        <p>
+          A GUI-driven Python framework for LiDAR (and paired image) data. Researchers build dynamic pipelines by
+          toggling components in a config — no need to touch the framework's source. KITTI / OpenPCDet / SUSTechPoints
+          readers built in; custom processes drop into a single <code>algo/</code> directory.
+        </p>
+        <ul class="card-stats">
+          <li><b>JOSS</b><span>peer-reviewed</span></li>
+          <li><b>v2.x</b><span>3 major revisions</span></li>
+          <li><b>PyPI</b><span>pip install LiGuard</span></li>
+          <li><b>MIT</b><span>license</span></li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/LiGuard-2.x" target="_blank" rel="noopener">Source</a>
+          <a class="btn small" href="https://m-shahbaz-kharal.github.io/LiGuard-2.x/" target="_blank" rel="noopener">Docs</a>
+          <a class="btn small" href="https://doi.org/10.21105/joss.06751" target="_blank" rel="noopener">Paper (DOI)</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- UrbanTwin -->
+    <article class="card card-feature card-urbantwin">
+      <div class="card-art card-art-pattern" aria-hidden="true">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ut-glow" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="#9eff5b" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#9eff5b" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="240" fill="#0a0a0c"/>
+          <rect width="400" height="240" fill="url(#ut-glow)"/>
+          <!-- intersection lines -->
+          <g stroke="#9eff5b" stroke-opacity="0.45" stroke-width="1" fill="none">
+            <path d="M0 120 L400 120"/>
+            <path d="M200 0 L200 240"/>
+            <path d="M120 60 L280 60 L320 100 L320 140 L280 180 L120 180 L80 140 L80 100 Z" stroke-opacity="0.25"/>
+          </g>
+          <!-- scan points -->
+          <g fill="#eaeaea">
+            <circle cx="160" cy="100" r="2"/><circle cx="170" cy="105" r="1.5"/><circle cx="180" cy="108" r="2"/>
+            <circle cx="190" cy="110" r="2.5"/><circle cx="200" cy="112" r="2"/><circle cx="210" cy="110" r="2"/>
+            <circle cx="220" cy="108" r="1.5"/><circle cx="230" cy="105" r="2"/><circle cx="240" cy="102" r="1.5"/>
+            <circle cx="150" cy="130" r="1.5"/><circle cx="160" cy="135" r="2"/><circle cx="170" cy="138" r="2"/>
+            <circle cx="200" cy="142" r="2.5"/><circle cx="230" cy="138" r="2"/><circle cx="240" cy="135" r="1.5"/>
+            <circle cx="250" cy="132" r="1.5"/>
+          </g>
+          <!-- bbox -->
+          <g stroke="#9eff5b" stroke-width="1.5" fill="none">
+            <rect x="140" y="90" width="120" height="60" stroke-opacity="0.9"/>
+            <rect x="138" y="88" width="124" height="64" stroke-opacity="0.3"/>
+          </g>
+          <text x="146" y="84" fill="#9eff5b" font-family="JetBrains Mono, monospace" font-size="10">vehicle · 0.93</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Dissertation core</span>
+          <span class="tag dim">Unreal · CARLA · CenterPoint</span>
+        </div>
+        <h3>UrbanTwin</h3>
+        <p>
+          High-fidelity synthetic replicas of three real roadside LiDAR datasets (LUMPI, V2X-Real, TUMTraf-I).
+          Built by aligning geometry, traffic, and sensor models to the source recordings. Lets detectors train
+          on perfect labels and still generalize. <em>Published as a dataset paper in IEEE OJITS 2026.</em>
+        </p>
+        <ul class="card-stats">
+          <li><b>3</b><span>public datasets</span></li>
+          <li><b>1</b><span>journal accepted</span></li>
+          <li><b>2</b><span>under review (T-ITS)</span></li>
+          <li><b>1</b><span>provisional patent</span></li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn small" href="https://doi.org/10.7910/DVN/D9SSWD" target="_blank" rel="noopener">UT-LUMPI</a>
+          <a class="btn small" href="https://doi.org/10.7910/DVN/N6N4UR" target="_blank" rel="noopener">UT-V2X-Real-IC</a>
+          <a class="btn small" href="https://doi.org/10.7910/DVN/D21HNZ" target="_blank" rel="noopener">UT-TUMTraf-I</a>
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/UrbanTwin-Challenge-6th-DriveX-Workshop-ECCV" target="_blank" rel="noopener">DriveX bundle</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DINOSTAR -->
+    <article class="card">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Self-supervised</span>
+        </div>
+        <h3>DINOSTAR</h3>
+        <p>
+          Train 3D object detectors on roadside LiDAR with <strong>zero human labels</strong>. Statistical
+          teachers — clustering + background filtering + box fitting — produce noisy supervision; a student
+          detector trained on the union matches fully-supervised baselines.
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://arxiv.org/abs/2501.17076" target="_blank" rel="noopener">arXiv</a>
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/DINOSTAR" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CVPR DriveX -->
+    <article class="card card-award">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag accent-tag">Award · 2026</span>
+        </div>
+        <h3>CVPR DriveX Challenge — 3rd Prize, Track 1</h3>
+        <p>
+          The Sim2Real LiDAR challenge at the 6th DriveX Workshop, IEEE/CVF CVPR 2026 (Denver). Submission
+          built on the <em>UrbanTwin</em> pipeline. Co-author with Shaurya Agarwal.
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/UrbanTwin-Challenge-6th-DriveX-Workshop-ECCV" target="_blank" rel="noopener">Submission bundle</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CBr -->
+    <article class="card">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Personal AI</span>
+          <span class="tag dim">Kotlin · FastAPI · Gemini</span>
+        </div>
+        <h3>CBr — Cloud Brain</h3>
+        <p>
+          A device-agnostic personal assistant. Android frontend (Jetpack Compose) talks to a FastAPI backend
+          that orchestrates Gemini Flash, spawns workers (Thinking, Image-gen, Tool-Creator), and routes
+          replies through a typed STM protocol with SDUI rendering.
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/CBr" target="_blank" rel="noopener">Source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DictateTyper -->
+    <article class="card">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Tool I use daily</span>
+          <span class="tag dim">faster-whisper · CUDA</span>
+        </div>
+        <h3>DictateTyper</h3>
+        <p>
+          A Windows tray app that turns my voice into keystrokes in any app. Live streaming transcription
+          with LocalAgreement-2 commits — words appear while I'm still speaking, no flicker. GPU-accelerated,
+          per-user settings, PyInstaller-packable.
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/DictateTyper" target="_blank" rel="noopener">Source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- A Beautiful Story -->
+    <article class="card">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Solo dev · VR</span>
+          <span class="tag dim">Unity · Meta Quest 3</span>
+        </div>
+        <h3>A Beautiful Story</h3>
+        <p>
+          A narrative VR game for Quest 3. Two protagonists, one mountain apartment, an AI-driven character
+          with a bounded narrative and open-ended conversation. The fun side of "what happens when LLMs
+          drive game NPCs."
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/ABeautifulStory" target="_blank" rel="noopener">Source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- STRIDE / LiGuard-Web -->
+    <article class="card">
+      <div class="card-body">
+        <div class="card-eyebrow">
+          <span class="tag">Web tool</span>
+          <span class="tag dim">React · FastAPI · WebSockets</span>
+        </div>
+        <h3>LiGuard-Web (STRIDE)</h3>
+        <p>
+          A visual node-graph runtime for data pipelines — think ComfyUI for point clouds. React Flow canvas,
+          streaming execution over WebSockets, parallel branch execution with proper error isolation, and a
+          pluggable node registry.
+        </p>
+        <div class="card-actions">
+          <a class="btn small" href="https://github.com/m-shahbaz-kharal/STRIDE" target="_blank" rel="noopener">Source</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="see-more">
+    More on <a href="https://github.com/m-shahbaz-kharal?tab=repositories" target="_blank" rel="noopener">GitHub</a> —
+    39 public repos and counting.
+  </p>
+</section>
+
+<!-- ================= PUBLICATIONS ================= -->
+<section class="pubs" id="publications">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Publications</h2>
+    <p class="section-sub">
+      Selected. Full list on <a href="https://scholar.google.com/citations?user=S9DacPcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+  </div>
+
+  <div class="pubs-section">
+    <h3 class="pubs-kind">Journal · Published</h3>
+    <ol class="pub-list">
+      <li>
+        <div class="pub-meta"><span class="pub-year">2026</span><span class="pub-venue">IEEE Open Journal of ITS</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>UrbanTwin: Synthetic Roadside LiDAR Datasets</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal · vol. 7, pp. 353–364</p>
+          <p class="pub-actions">
+            <a href="https://doi.org/10.1109/OJITS.2026.3655581" target="_blank" rel="noopener">DOI</a>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-venue">Journal of Open Source Software</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>LiGuard: A GUI-powered Python Framework for Processing Point-Cloud Data</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal</p>
+          <p class="pub-actions">
+            <a href="https://doi.org/10.21105/joss.06751" target="_blank" rel="noopener">DOI</a>
+            <a href="https://github.com/m-shahbaz-kharal/LiGuard-2.x" target="_blank" rel="noopener">Code</a>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="pubs-section">
+    <h3 class="pubs-kind">Journal · Under Review</h3>
+    <ol class="pub-list">
+      <li>
+        <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-venue">IEEE T-IV · 2nd round</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>LiGuard: A Streamlined Open-Source Framework for Rapid &amp; Interactive Lidar Research</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal</p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-venue">IEEE T-ITS</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>Bridging Sim2Real Learning Gaps through High-Fidelity Digital Twins for LiDAR-based Perception Tasks</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal</p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-venue">IEEE T-ITS</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>SpatioStar: A Framework for Modeling High-Fidelity Digital Twins for Sim2Real LiDAR-based ITS</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal</p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-venue">ACM SIGSPATIAL</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>DINOSTAR: Deep Iterative Neural Object Detector Self-Supervised Training for Roadside LiDAR Applications</strong></p>
+          <p class="pub-authors">M. Shahbaz, S. Agarwal</p>
+          <p class="pub-actions">
+            <a href="https://arxiv.org/abs/2501.17076" target="_blank" rel="noopener">arXiv:2501.17076</a>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="pubs-section">
+    <h3 class="pubs-kind">Conference</h3>
+    <ol class="pub-list">
+      <li>
+        <div class="pub-meta"><span class="pub-year">2022</span><span class="pub-venue">IBCAST · IEEE</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>Autonomous Drone Swarm Navigation in Complex Environments</strong></p>
+          <p class="pub-authors">S. Qamar, M. Qamar, M. Shahbaz, M. Arif Arshad, N. Saher Shah, A. Khan</p>
+          <p class="pub-actions">
+            <a href="https://doi.org/10.1109/IBCAST54850.2022.9990563" target="_blank" rel="noopener">DOI</a>
+            <span class="pub-cite">2 citations</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2020</span><span class="pub-venue">RAEE &amp; CS · IEEE</span></div>
+        <div class="pub-body">
+          <p class="pub-title"><strong>Autonomous Navigation of Swarms in 3D Environments Using Deep Reinforcement Learning</strong></p>
+          <p class="pub-authors">M. Shahbaz, A. Khan</p>
+          <p class="pub-actions">
+            <a href="https://doi.org/10.1109/RAEECS50817.2020.9265845" target="_blank" rel="noopener">DOI</a>
+            <a href="https://github.com/m-shahbaz-kharal/DRL-Swarm" target="_blank" rel="noopener">Code</a>
+            <span class="pub-cite">4 citations</span>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="pubs-section">
+    <h3 class="pubs-kind">Talks &amp; Presentations</h3>
+    <ol class="pub-list compact">
+      <li>
+        <div class="pub-meta"><span class="pub-year">2024</span><span class="pub-venue">TRB Annual</span></div>
+        <div class="pub-body">
+          <p class="pub-title">Translating LiDAR-based Object Detection from On-Road to Roadside: An Evaluatory Study</p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2023</span><span class="pub-venue">FL AV Summit</span></div>
+        <div class="pub-body">
+          <p class="pub-title">Self-Supervising Object Detection for Roadside LiDAR Applications</p>
+        </div>
+      </li>
+      <li>
+        <div class="pub-meta"><span class="pub-year">2022</span><span class="pub-venue">FL AV Summit</span></div>
+        <div class="pub-body">
+          <p class="pub-title">Using LiDAR for Real-Time Pedestrian Safety</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= AWARDS + DATASETS + PATENT ================= -->
+<section class="recognition">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Recognition &amp; releases</h2>
+  </div>
+
+  <div class="recog-grid">
+    <div class="recog-col">
+      <h3 class="recog-kind">Awards</h3>
+      <ul class="award-list">
+        <li>
+          <span class="award-year">2026</span>
+          <div>
+            <strong>3rd Prize, Track 1 — CVPR 2026 DriveX Challenge</strong>
+            <span>IEEE/CVF CVPR 2026, Denver · Sim2Real LiDAR challenge</span>
+          </div>
+        </li>
+        <li>
+          <span class="award-year">2021</span>
+          <div>
+            <strong>ORCGS Doctoral Fellowship</strong>
+            <span>University of Central Florida</span>
+          </div>
+        </li>
+        <li>
+          <span class="award-year">2018</span>
+          <div>
+            <strong>IT Endowment Scholarship</strong>
+            <span>PIEAS, Islamabad</span>
+          </div>
+        </li>
+        <li>
+          <span class="award-year">2018</span>
+          <div>
+            <strong>1st Position, Final Year Project Competition</strong>
+            <span>PMAS AAUR — Augmented Reality Carrom Board</span>
+          </div>
+        </li>
+        <li>
+          <span class="award-year">2016</span>
+          <div>
+            <strong>1st Regional, Microsoft Imagine Cup</strong>
+            <span>Pakistan</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="recog-col">
+      <h3 class="recog-kind">Datasets</h3>
+      <ul class="ds-list">
+        <li><a href="https://doi.org/10.7910/DVN/D9SSWD" target="_blank" rel="noopener"><strong>UT-LUMPI</strong></a><span>Synthetic replica of LUMPI · Harvard Dataverse 2025</span></li>
+        <li><a href="https://doi.org/10.7910/DVN/N6N4UR" target="_blank" rel="noopener"><strong>UT-V2X-Real-IC</strong></a><span>Intersection-camera digital twin · 2025</span></li>
+        <li><a href="https://doi.org/10.7910/DVN/D21HNZ" target="_blank" rel="noopener"><strong>UT-TUMTraf-I</strong></a><span>TUMTraf intersection · 2025</span></li>
+      </ul>
+
+      <h3 class="recog-kind" style="margin-top:2.5rem">Patent</h3>
+      <ul class="ds-list">
+        <li>
+          <strong>Statistically Aligned LiDAR Digital Twin Pipeline</strong>
+          <span>Provisional, UCF Ref. 2085.237.PR · 2026</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE / CV ================= -->
+<section class="cv" id="cv">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Experience &amp; education</h2>
+  </div>
+
+  <ol class="timeline">
+    <li>
+      <span class="t-when">2025 — now</span>
+      <div class="t-body">
+        <h3>Post-doctoral Scholar</h3>
+        <p class="t-where">University of Central Florida · Dept. of CECE · Urbanity Lab</p>
+        <p>
+          Scaling Sim2Real methodologies for LiDAR perception. Two T-ITS-class manuscripts under review,
+          one provisional patent, a CVPR challenge prize, and a fourth-version push of LiGuard.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2022 — 2025</span>
+      <div class="t-body">
+        <h3>Graduate Research Assistant</h3>
+        <p class="t-where">UCF · CECE · FDOT-funded projects</p>
+        <p>
+          Led <strong>PULSE</strong> (Pedestrian Upfront LiDAR-based Safety on Edge), worked on the
+          Smart Work Zone project. 3D perception with LiDAR–camera fusion, sensor rigs (Ouster, Hesai,
+          Flir), and the data infrastructure to feed them.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2021 — 2025</span>
+      <div class="t-body">
+        <h3>Ph.D., Civil Engineering (Intelligent Transportation Systems)</h3>
+        <p class="t-where">University of Central Florida · CGPA 3.71 / 4.0</p>
+        <p>
+          Dissertation: <em>From Failure to Fidelity: Enabling Scalable Sim2Real LiDAR Perception</em>.
+          ORCGS Doctoral Fellowship.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2018 — 2020</span>
+      <div class="t-body">
+        <h3>M.S., Computer Science</h3>
+        <p class="t-where">Pakistan Institute of Engineering &amp; Applied Sciences (PIEAS) · CGPA 3.78 / 4.0</p>
+        <p>
+          QS-ranked #1 university in Pakistan. Thesis on deep reinforcement learning for autonomous
+          drone swarms; first-author IEEE paper at RAEE&amp;CS.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2018 — 2019</span>
+      <div class="t-body">
+        <h3>Freelance Software Developer</h3>
+        <p class="t-where">Fiverr · Level 1 Seller</p>
+        <p>
+          Led a smart-home build: lighting, thermostats, switches, curtains, a smart doorbell with dual
+          audio/video. Raspberry Pi + Arduino Nano + cross-platform control software.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2016 — 2018</span>
+      <div class="t-body">
+        <h3>Indie Game &amp; App Developer</h3>
+        <p class="t-where">Personal · Google Play</p>
+        <p>
+          Shipped <em>Moneypad</em> (personal finance), <em>Blow</em> (survival game), and
+          <em>3D Banta Balls</em> (online multiplayer take on the classic Pakistani street game).
+          1st in Regional Microsoft Imagine Cup, 2016.
+        </p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2014 — 2018</span>
+      <div class="t-body">
+        <h3>B.S., Computer Science</h3>
+        <p class="t-where">PMAS Arid Agriculture University, Rawalpindi · CGPA 3.50 / 4.0</p>
+        <p>
+          Senior design project: Augmented Reality Carrom Board with a custom conductive-thread glove
+          controller. 1st place, 2018 Open House competition.
+        </p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="contact-eyebrow">07 · Get in touch</p>
+    <h2 class="contact-title">
+      Hiring for <em>3D perception</em>, <em>autonomy</em>, or <em>simulation</em>?<br/>
+      I'd like to hear about it.
+    </h2>
+    <p class="contact-lede">
+      I'm open to research scientist, applied scientist, and senior engineering roles in autonomous
+      driving, robotics, and spatial AI. Postdoc collaborations welcome too.
+    </p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:M.Shahbaz.Kharal@outlook.com">
+        <span class="cc-label">Email · personal</span>
+        <span class="cc-value">M.Shahbaz.Kharal@outlook.com</span>
+      </a>
+      <a class="contact-card" href="mailto:Muhammad.Shahbaz@ucf.edu">
+        <span class="cc-label">Email · UCF</span>
+        <span class="cc-value">Muhammad.Shahbaz@ucf.edu</span>
+      </a>
+      <a class="contact-card" href="https://github.com/m-shahbaz-kharal" target="_blank" rel="noopener">
+        <span class="cc-label">GitHub</span>
+        <span class="cc-value">@m-shahbaz-kharal</span>
+      </a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=S9DacPcAAAAJ" target="_blank" rel="noopener">
+        <span class="cc-label">Google Scholar</span>
+        <span class="cc-value">Author profile</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/m-shahbaz-kharal" target="_blank" rel="noopener">
+        <span class="cc-label">LinkedIn</span>
+        <span class="cc-value">/in/m-shahbaz-kharal</span>
+      </a>
+      <a class="contact-card" href="tel:+13212000125">
+        <span class="cc-label">Phone</span>
+        <span class="cc-value">+1 (321) 200-0125</span>
+      </a>
+    </div>
+
+    <p class="contact-location">
+      <span class="loc-dot"></span>
+      Based in Orlando, Florida · open to relocation
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="foot-inner">
+    <p>© <span id="year"></span> Muhammad Shahbaz.</p>
+    <p>
+      Built by hand with HTML, CSS, and a small canvas script.
+      <a href="https://github.com/m-shahbaz-kharal/m-shahbaz-kharal.github.io" target="_blank" rel="noopener">Source</a>.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

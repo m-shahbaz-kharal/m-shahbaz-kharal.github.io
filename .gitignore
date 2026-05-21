@@ -1,0 +1,9 @@
+# local previews / test artifacts
+.preview*
+.shoot.html
+
+# editor noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
