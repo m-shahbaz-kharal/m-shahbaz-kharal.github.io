@@ -39,6 +39,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
+    <li><a href="#gallery">Results</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#cv">CV</a></li>
@@ -132,6 +133,9 @@
     </div>
 
     <aside class="about-side">
+      <figure class="portrait">
+        <img src="assets/img/portrait.jpg" alt="Portrait of Muhammad Shahbaz" loading="lazy" width="600" height="720" />
+      </figure>
       <dl class="kv">
         <dt>Based in</dt><dd>Orlando, Florida</dd>
         <dt>Role</dt><dd>Post-doctoral Scholar, UCF CECE</dd>
@@ -214,10 +218,85 @@
   </div>
 </section>
 
+<!-- ================= GALLERY ================= -->
+<section class="gallery" id="gallery">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Selected results</h2>
+    <p class="section-sub">
+      Figures from the work — real intersections, the digital twins that copy them, and the perception
+      models that train on the copies.
+    </p>
+  </div>
+
+  <figure class="gal-feature">
+    <img src="assets/img/real-sim-real.jpg" alt="Three side-by-side panels: real-world intersection with vehicles, the matched digital-twin simulation, and the synthesized scene used for training." loading="lazy" />
+    <figcaption>
+      <strong>Real → Twin → Synthetic.</strong> Three views of the same intersection: real-world capture
+      (left), the high-fidelity digital twin built to match it (center), and the synthetic scene used to
+      generate training data (right). From <em>Bridging the Sim2Real Gap</em>, IEEE T-ITS (under review).
+    </figcaption>
+  </figure>
+
+  <div class="gal-grid">
+    <figure class="gal-item">
+      <img src="assets/img/dt-process.jpg" alt="11-step diagram showing the UrbanTwin pipeline from selecting a real location to producing labeled synthetic LiDAR data via CARLA." loading="lazy" />
+      <figcaption>
+        <strong>The UrbanTwin pipeline.</strong> Eleven steps from a real-world location to labeled synthetic
+        LiDAR — geospatial data → 3D geometry cleanup → CARLA road network → sensor &amp; traffic simulation →
+        scale-aligned synthetic point clouds. Patent pending.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item">
+      <img src="assets/img/urbantwin-compare.jpg" alt="Side-by-side comparison of a real LiDAR point cloud and the digital-twin synthesized version of the same intersection." loading="lazy" />
+      <figcaption>
+        <strong>Real vs. synthesized point clouds.</strong> The synthetic scan (right) reproduces the
+        original LiDAR (left) closely enough that detectors trained on the synthetic data generalize back
+        to real sensors.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item">
+      <img src="assets/img/labels-progression.jpg" alt="Four-panel LiDAR scan with increasing levels of annotation: raw points, bounding boxes, semantic colors, instance detections." loading="lazy" />
+      <figcaption>
+        <strong>Progressive labeling.</strong> A roadside LiDAR scan augmented step by step: raw points,
+        3D bounding boxes, semantic class colors, and final per-instance detections. All UT-* datasets
+        ship with this full label stack.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item">
+      <img src="assets/img/liguard-intersection.jpg" alt="LiGuard's GUI rendering a roadside LiDAR intersection scene with detected vehicles and a camera image inset." loading="lazy" />
+      <figcaption>
+        <strong>LiGuard, in action.</strong> Composing a roadside pipeline interactively: live point-cloud
+        visualization with detection overlays, paired camera feed, and per-process toggles on the left.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item">
+      <img src="assets/img/dinostar-diagram.png" alt="DINOSTAR architecture diagram: a teacher model produces noisy labels that train a student model, then the student becomes the teacher across three iterations." loading="lazy" />
+      <figcaption>
+        <strong>DINOSTAR — self-supervised iteration.</strong> A statistically-modeled teacher produces
+        noisy 3D labels; a student detector trains on them; the student becomes the next iteration's
+        starting point. No human annotations.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item">
+      <img src="assets/img/ut-lumpi-chart.png" alt="Bar charts and radar plot comparing LUMPI and UT-LUMPI datasets across LiDAR point density, scene complexity, vehicle envelope, and normalized metrics." loading="lazy" />
+      <figcaption>
+        <strong>Statistical alignment.</strong> Point density, scene complexity, and vehicle envelopes
+        across LUMPI and its synthetic twin UT-LUMPI — measured, not eyeballed.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ================= FEATURED WORK ================= -->
 <section class="work" id="work">
   <div class="section-head">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Featured work</h2>
     <p class="section-sub">
       The projects I'd actually want to talk to you about. Research first, then tools, then the side projects
@@ -229,8 +308,8 @@
 
     <!-- LiGuard -->
     <article class="card card-feature card-liguard">
-      <div class="card-art" aria-hidden="true">
-        <img src="https://github.com/m-shahbaz-kharal/LiGuard-2.x/raw/dev_2.x/docs/figs/liguard-logo.png" alt="" loading="lazy" />
+      <div class="card-art card-art-cover" aria-hidden="true">
+        <img src="assets/img/liguard-gui.jpg" alt="" loading="lazy" />
       </div>
       <div class="card-body">
         <div class="card-eyebrow">
@@ -259,38 +338,8 @@
 
     <!-- UrbanTwin -->
     <article class="card card-feature card-urbantwin">
-      <div class="card-art card-art-pattern" aria-hidden="true">
-        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="ut-glow" cx="50%" cy="50%" r="60%">
-              <stop offset="0%" stop-color="#9eff5b" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#9eff5b" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect width="400" height="240" fill="#0a0a0c"/>
-          <rect width="400" height="240" fill="url(#ut-glow)"/>
-          <!-- intersection lines -->
-          <g stroke="#9eff5b" stroke-opacity="0.45" stroke-width="1" fill="none">
-            <path d="M0 120 L400 120"/>
-            <path d="M200 0 L200 240"/>
-            <path d="M120 60 L280 60 L320 100 L320 140 L280 180 L120 180 L80 140 L80 100 Z" stroke-opacity="0.25"/>
-          </g>
-          <!-- scan points -->
-          <g fill="#eaeaea">
-            <circle cx="160" cy="100" r="2"/><circle cx="170" cy="105" r="1.5"/><circle cx="180" cy="108" r="2"/>
-            <circle cx="190" cy="110" r="2.5"/><circle cx="200" cy="112" r="2"/><circle cx="210" cy="110" r="2"/>
-            <circle cx="220" cy="108" r="1.5"/><circle cx="230" cy="105" r="2"/><circle cx="240" cy="102" r="1.5"/>
-            <circle cx="150" cy="130" r="1.5"/><circle cx="160" cy="135" r="2"/><circle cx="170" cy="138" r="2"/>
-            <circle cx="200" cy="142" r="2.5"/><circle cx="230" cy="138" r="2"/><circle cx="240" cy="135" r="1.5"/>
-            <circle cx="250" cy="132" r="1.5"/>
-          </g>
-          <!-- bbox -->
-          <g stroke="#9eff5b" stroke-width="1.5" fill="none">
-            <rect x="140" y="90" width="120" height="60" stroke-opacity="0.9"/>
-            <rect x="138" y="88" width="124" height="64" stroke-opacity="0.3"/>
-          </g>
-          <text x="146" y="84" fill="#9eff5b" font-family="JetBrains Mono, monospace" font-size="10">vehicle · 0.93</text>
-        </svg>
+      <div class="card-art card-art-cover" aria-hidden="true">
+        <img src="assets/img/urbantwin-compare.jpg" alt="" loading="lazy" />
       </div>
       <div class="card-body">
         <div class="card-eyebrow">
@@ -441,7 +490,7 @@
 <!-- ================= PUBLICATIONS ================= -->
 <section class="pubs" id="publications">
   <div class="section-head">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Publications</h2>
     <p class="section-sub">
       Selected. Full list on <a href="https://scholar.google.com/citations?user=S9DacPcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
@@ -569,7 +618,7 @@
 <!-- ================= AWARDS + DATASETS + PATENT ================= -->
 <section class="recognition">
   <div class="section-head">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Recognition &amp; releases</h2>
   </div>
 
@@ -637,7 +686,7 @@
 <!-- ================= EXPERIENCE / CV ================= -->
 <section class="cv" id="cv">
   <div class="section-head">
-    <span class="section-num">06</span>
+    <span class="section-num">07</span>
     <h2 class="section-title">Experience &amp; education</h2>
   </div>
 
@@ -727,7 +776,7 @@
 <!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <p class="contact-eyebrow">07 · Get in touch</p>
+    <p class="contact-eyebrow">08 · Get in touch</p>
     <h2 class="contact-title">
       Hiring for <em>3D perception</em>, <em>autonomy</em>, or <em>simulation</em>?<br/>
       I'd like to hear about it.

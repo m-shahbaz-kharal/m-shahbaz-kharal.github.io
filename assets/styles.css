@@ -458,6 +458,25 @@ section {
   border-radius: 6px;
   background: var(--bg-card);
 }
+.portrait {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+}
+.portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 70%, var(--bg-card) 100%);
+  pointer-events: none;
+}
+.portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(0.15) contrast(1.02);
+}
 .kv {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -544,6 +563,73 @@ section {
 }
 .focus-keys em { color: var(--fg-muted); font-style: italic; }
 
+/* ============== GALLERY ============== */
+.gallery { padding-top: var(--pad-y); padding-bottom: var(--pad-y); }
+
+.gal-feature {
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.gal-feature img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.04);
+}
+.gal-feature figcaption {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+  background: rgba(255,255,255,0.015);
+}
+.gal-feature figcaption strong { color: var(--fg); font-weight: 500; }
+.gal-feature figcaption em { color: var(--accent); font-style: italic; }
+
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 880px) { .gal-grid { grid-template-columns: 1fr; } }
+
+.gal-item {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 250ms var(--ease), transform 250ms var(--ease);
+}
+.gal-item:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+.gal-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #f6f3e8;
+  filter: contrast(1.03);
+}
+.gal-item figcaption {
+  padding: 1.25rem 1.4rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.gal-item figcaption strong { color: var(--fg); font-weight: 500; }
+
 /* ============== WORK / CARDS ============== */
 .work-grid {
   display: grid;
@@ -590,6 +676,25 @@ section {
   width: auto;
   opacity: 0.92;
 }
+/* "cover" variant — the image fills the card art frame */
+.card-art-cover { aspect-ratio: 16 / 7; }
+.card-art-cover img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  max-height: none;
+  object-fit: cover;
+  opacity: 1;
+  filter: contrast(1.04) saturate(0.95);
+  transition: transform 600ms var(--ease);
+}
+.card-art-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10,10,12,0.55) 100%);
+  pointer-events: none;
+}
+.card:hover .card-art-cover img { transform: scale(1.02); }
 .card-art-pattern { aspect-ratio: 16 / 6; padding: 0; }
 .card-art-pattern svg { width: 100%; height: 100%; }
 .card-liguard .card-art { background: linear-gradient(135deg, #0f0f12, #1a1a20); }
