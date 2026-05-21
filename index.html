@@ -239,6 +239,54 @@
   </figure>
 
   <div class="gal-grid">
+    <figure class="gal-item gal-item-motion">
+      <div class="gal-media">
+        <video src="assets/img/dataset-playback.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <span class="motion-badge">live</span>
+      </div>
+      <figcaption>
+        <strong>Roadside LiDAR, raw.</strong> A single Ouster sweep from one of the UrbanTwin source
+        datasets. Concentric rings, the sensor cone, vehicles and pedestrians caught mid-frame —
+        what every algorithm in this lab eventually has to read.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item gal-item-motion">
+      <div class="gal-media">
+        <video src="assets/img/sim2real-align.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <span class="motion-badge">live</span>
+      </div>
+      <figcaption>
+        <strong>Aligning sim to real.</strong> Synthetic point cloud (orange) registered onto real LiDAR
+        (gray) inside Blender. The fit is the headline result of the UrbanTwin pipeline — the closer
+        these clouds overlap, the smaller the Sim2Real gap.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item gal-item-motion">
+      <div class="gal-media">
+        <video src="assets/img/carla-design.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <span class="motion-badge">live</span>
+      </div>
+      <figcaption>
+        <strong>Designing the twin in CARLA.</strong> Custom tooling for placing LiDAR sensors inside the
+        synthesized intersection. Range cone, geo-coordinates, and sensor pose are all editable in-engine
+        so the simulation matches the real rig exactly.
+      </figcaption>
+    </figure>
+
+    <figure class="gal-item gal-item-motion">
+      <div class="gal-media">
+        <video src="assets/img/kitti-detect.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <span class="motion-badge">live</span>
+      </div>
+      <figcaption>
+        <strong>Detection in motion.</strong> PIXOR running on the KITTI raw sequences inside LiGuard.
+        Side-by-side: the camera frame and the bird's-eye LiDAR with predicted 3D bounding boxes —
+        rendered in real time, frame by frame.
+      </figcaption>
+    </figure>
+
     <figure class="gal-item">
       <img src="assets/img/dt-process.jpg" alt="11-step diagram showing the UrbanTwin pipeline from selecting a real location to producing labeled synthetic LiDAR data via CARLA." loading="lazy" />
       <figcaption>
